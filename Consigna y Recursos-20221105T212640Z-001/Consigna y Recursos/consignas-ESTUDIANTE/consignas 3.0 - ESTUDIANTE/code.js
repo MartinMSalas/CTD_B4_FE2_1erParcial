@@ -38,13 +38,16 @@ cambiarTema.addEventListener("click", alternarColorTema);
 function obtenerDatosDelUsuario() {
   /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
   datosPersona.nombre = prompt("Ingresa tu nombre por favor: ");
-  const anioNacimiento = parseInt(
-    prompt("Ingresa ahora tu año de nacimiento: ")
-  );
+  let anioNacimiento = 0;
+  do{
+    anioNacimiento = parseInt(
+      prompt("Ingresa ahora tu año de nacimiento: "))
+      console.log(anioNacimiento);
+  } while (isNaN(anioNacimiento) || anioNacimiento<1900 || anioNacimiento > new Date().getFullYear());
   datosPersona.edad = 2022 - anioNacimiento;
   datosPersona.ciudad = prompt("En la ciudad donde naciste: ");
   datosPersona.interesPorJs = confirm("Te interesa JavaScript ?");
-
+  
 
 }
 
